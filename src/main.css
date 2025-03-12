@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Love+Ya+Like+A+Sister&display=swap');@import "tailwindcss";
+
+/* :root {
+  --font-cabin: "Cabin Sketch", sans-serif;
+}
+
+body {
+  font-family: var(--font-cabin);
+} */
+ @theme {
+  --font-cabin: "Cabin Sketch", sans-serif;
+  --font-love: "Love Ya Like A Sister", sans-serif;
+ }
