@@ -1,12 +1,8 @@
-import { Tasks } from "./App";
 import Delete from "./Delete";
+import { useTasksContext } from "../lib/hooks";
 
-type TasksListProps = {
-  tasks: Tasks[],
-  handleToggleTasks: (id: number) => void,
-  handleDeleteTasks: (id: number) => void,
-}
-export default function TaskList({ tasks, handleToggleTasks, handleDeleteTasks }: TasksListProps) {
+export default function TaskList() {
+  const {tasks, handleToggleTasks, handleDeleteTasks} = useTasksContext();
 
   return (
     <ul>
@@ -26,7 +22,7 @@ export default function TaskList({ tasks, handleToggleTasks, handleDeleteTasks }
             className={`${task.isCompleted ? "line-through text-[#ccc]" : ""}`}>
             {task.text}
           </span>
-          <Delete id={task.id} handleDeleteTasks={handleDeleteTasks}/>
+          <Delete id={task.id} onDelete={handleDeleteTasks}/>
         </li>
       ))}
     </ul>

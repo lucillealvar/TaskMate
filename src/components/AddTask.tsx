@@ -1,13 +1,11 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useTasksContext } from "../lib/hooks";
 
-type AddTasksFormProps = {
-  handleAddTasks: (taskText: string) => void;
-}
 
-export default function AddTask({handleAddTasks, }:
-  AddTasksFormProps) {
+export default function AddTask() {
   const [taskText, setTaskText] = useState("");
+  const {handleAddTasks}= useTasksContext();
 
   return (
     <form onSubmit={(e) => {

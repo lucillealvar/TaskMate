@@ -1,16 +1,13 @@
 import { MdOutlineDelete } from "react-icons/md";
+import { DeleteProps } from "../lib/type";
 
-type DeleteProps = {
-  id: number,
-  handleDeleteTasks: (id: number) => void
-}
 
-export default function Delete({id, handleDeleteTasks}: DeleteProps) {
+export default function Delete({id, onDelete}: DeleteProps) {
     return (
         <button
         onClick={(e) => {
           e.stopPropagation();
-          handleDeleteTasks(id);
+          onDelete(id);
         }}>
         <MdOutlineDelete className="text-red-600 cursor-pointer" />
       </button>
