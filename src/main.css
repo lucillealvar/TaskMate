@@ -36,17 +36,17 @@ body {
 
 @media(min-width: 320px){
 h1 {
-  top: 15%;
+  top: 17%;
 }
 }
 @media(min-width: 767px), (max-height: 883px) {
   h1{
-    top:15%;
+    top:10%;
   }
 
 }
 @media(min-width: 1280px), (max-height: 950px){
   h1{
-    top: 8%;
+    top: 10%;
   }
 }
