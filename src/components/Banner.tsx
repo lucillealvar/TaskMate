@@ -1,6 +1,6 @@
 export default function Banner() {
     return (
-      <h1 className="font-cabin text-[60px] md:text-[120px] font-bold text-black/50 absolute">
+      <h1 className="hidden md:block font-cabin md:text-[120px] font-bold text-black/50 absolute">
       TaskMate
     </h1>
     )
