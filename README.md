@@ -57,3 +57,7 @@ npm run dev
 - Login and registration feature
 - Drag and drop task reordering
 - theming (light/dark mode)
+
+---
+
+📚 Inspired by ByteGrad. Modified by LuceCode
