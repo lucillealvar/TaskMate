@@ -17,7 +17,7 @@ export default function AddTask() {
         Add Task
         <input
           type="text"
-          className="h-[40px] border border-black/[12%] rounded-[5px] my-[9px] text-[14px] block w-full p-[16px]"
+          className="h-[50px] md:h-[40px] border border-black/[12%] rounded-[5px] my-[9px] text-[14px] block w-full p-[16px]"
           value = {taskText}
           onChange = {(e) => {
             setTaskText(e.target.value)

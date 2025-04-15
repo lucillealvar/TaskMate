@@ -5,7 +5,7 @@ export default function TaskList() {
   const {tasks, handleToggleTasks, handleDeleteTasks} = useTasksContext();
 
   return (
-    <ul>
+    <ul className="overflow-auto md: col-start-1 md:row-start-2">
       {tasks.length === 0 && (
         <li className="h-full flex justify-center items-center font-semibold">
           Start Adding Tasks

@@ -35,24 +35,18 @@ body {
 } */
 
 @media(min-width: 320px){
-
+h1 {
+  top: 15%;
+}
 }
 @media(min-width: 767px), (max-height: 883px) {
   h1{
-    top:18%;
-  }
-  main{
-    width: 672px;
-    height: 436px;
+    top:15%;
   }
 
 }
 @media(min-width: 1280px), (max-height: 950px){
   h1{
     top: 8%;
-  }
-  main{
-    width: 972px;
-    height: 636px;
   }
 }

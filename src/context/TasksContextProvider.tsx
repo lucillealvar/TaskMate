@@ -1,21 +1,33 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Tasks, TasksContextProviderProps, ToDosContext } from "../lib/type";
 
 export const TasksContext = createContext<ToDosContext | null>(null);
 
+const getInitialTasks = () => {
+  const savedTasks = localStorage.getItem("tasks");
+  if (savedTasks) {
+    return JSON.parse(savedTasks);
+  } else {
+    return [];
+  }
+};
+
 export default function TasksContextProvider({
   children,
 }: TasksContextProviderProps) {
-  const [tasks, setTasks] = useState<Tasks[]>([]);
+  // state
+  const [tasks, setTasks] = useState<Tasks[]>(getInitialTasks);
 
+  // derived state
   const totalNumberOfTasks = tasks.length;
   const numberOfCompletedTasks = tasks.filter(
     (task) => task.isCompleted
   ).length;
 
+  // event handlers
   const handleAddTasks = (taskText: string) => {
-    if (tasks.length >= 3) {
-      alert("Login to add more");
+    if (tasks.length >= 10) {
+      alert("You've reach the limit");
       return;
     } else {
       setTasks((prev) => [
@@ -43,6 +55,10 @@ export default function TasksContextProvider({
   const handleDeleteTasks = (id: number) => {
     setTasks((prev) => prev.filter((tasks) => tasks.id !== id));
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   return (
     <TasksContext.Provider
       value={{
