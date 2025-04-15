@@ -36,7 +36,7 @@ body {
 
 @media(min-width: 320px){
 h1 {
-  top: 17%;
+  top: 6%;
 }
 }
 @media(min-width: 767px), (max-height: 883px) {
